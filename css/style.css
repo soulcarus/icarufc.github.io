@@ -155,6 +155,115 @@ a{
     margin-top: 1.5rem;
 }
 
+.experience {
+    height: 100%;
+    padding-top: 60px;
+    padding-bottom: 80px;
+}
+
+.experience h3{
+    font-weight: 300;
+    letter-spacing: .2rem;
+}
+
+.accordion-experience{
+    position: relative;
+    width: 100%;
+    color: rgba(48, 69, 91, 1);
+    margin-top: 2rem;
+}
+
+.accordion-experience section{
+    display: block;
+    width: 100%;
+    left: 0;
+}
+
+.accordion-experience section input[name='sections']{
+    left: -9999px;
+    position: absolute;
+}
+
+.accordion-experience section input[name='sections']:checked + label{
+    background-color: #1f1e1e;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.accordion-experience section input[name='sections']:checked ~ article{
+    display: block;
+}
+
+.accordion-experience section label{
+    font-family: var(--font-primary);
+    color: #ffffff;
+    font-weight: 300;
+    cursor: pointer;
+    display: block;
+    letter-spacing: .1rem;
+    font-size: 1.2rem;
+    padding: 1rem 0.83rem;
+    position: relative;
+    width: 100%;
+    z-index: 100;
+    border: 2px solid #1f1e1e;
+}
+
+.accordion-experience section article{
+    display: none;
+    left: 0;
+    width: 100%;
+    position: relative;
+    top: 0;
+    font-family: var(--font-primary);
+    font-weight: 300;
+    line-height: 1.7;
+    padding: 2rem 0;
+}
+
+.accordion-experience section article ul li{
+    font-weight: 300;
+    font-size: 16px;
+    color: #c4c4c4de;
+    list-style: disc;
+    list-style-position: inside;
+
+}
+
+.accordion-experience section article > p{
+    color: #6cace4;
+    font-weight: 300;
+    font-size: 14px;
+    margin: 16px 0 16px 0;
+    opacity: .8;
+}
+
+.title-experience{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.title-experience h2{
+    color: #fff;
+}
+
+.accordion-experience section article::after{
+    background-color: transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    left: -229;
+    position: absolute;
+    top: 0;
+    width: 220px;
+    z-index: 1;
+}
+
+
+
+
+
 @media screen and (min-width: 767px) {
     /* Base */
   
@@ -192,5 +301,50 @@ a{
     .hero p{
       font-size: 1rem;
       text-align: justify;
+    }
+
+    /* Experiencia */
+
+    .accordion-experience{
+        width: 100%;
+        color: rgba(48,69, 92, 1);
+        margin-top: 3rem;
+    }
+
+    .accordion-experience section label{
+        border-color: #1f1e1e;
+        border-style: solid;
+        border-width: 0 0 0 2px;
+        width: 20%;
+    }
+
+    .accordion-experience section label:hover span{
+        transition: all .3s ease-in-out;
+    }
+
+    .accordion-experience section label:hover span{
+        margin-left: 6px;
+    } 
+
+    .accordion-experience section input[name='sections']:checked + label{
+        background-color: #1f1e1e;
+        color: #ffffff;
+        border-style: solid;
+        border-width: 0 0 0 2px;
+
+    }
+
+    .accordion-experience section article{
+        position: absolute;
+        width: 70%;
+        left: 26.5%;
+        padding: 0;
+    }
+
+    .title-experience{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
 }
